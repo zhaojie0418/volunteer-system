@@ -1,0 +1,104 @@
+body {
+    overflow: hidden;
+}
+
+/* 侧边栏 */
+.aside {
+    float: left;
+    width: 200px;
+    height: 100vh;
+    background-color: #2a3f54;
+    color: #fff;
+}
+
+.aside .welcom {
+    width: 200px;
+    height: 70px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    line-height: 70px;
+}
+
+.aside .welcom img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.nav ul li a {
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+.nav li a span {
+    display: inline-table;
+    margin-left: 25px;
+}
+
+.nav li a i {
+    position: absolute;
+    top: 26px;
+    left: 27px;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    color: #fff;
+    background-color: #35495d;
+}
+
+.content {
+    margin-left: 200px;
+    height: 100vh;
+    /* background-color: pink; */
+}
+
+.content .header {
+    width: 100%;
+    height: 55px;
+    line-height: 55px;
+    /* background-color: pink; */
+}
+
+.header i {
+    padding: 0 11px 0 15px;
+}
+
+.header .admin {
+    float: right;
+    font-size: 14px;
+}
+
+.header .quit {
+    float: right;
+    padding: 0 30px;
+    font-size: 14px;
+    color: #00a1d8;
+}
+
+.content .bag {
+    height: 100%;
+    background-color: #eff3f6;
+}
+
+.content .main_bag {
+    width: 1255px;
+    height: 690px;
+    margin: 20px 20px 0px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* 测试颜色 */
+/* .header .quit {
+    color:#64b0f7;
+} */

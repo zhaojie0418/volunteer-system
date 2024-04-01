@@ -1,0 +1,137 @@
+body {
+    margin: auto;
+}
+.new1 {
+    width: 1500px;
+    height:600px;
+    margin: auto;
+	position: relative;
+	margin-top:0px ;
+	margin: 0px auto;
+	background-size: cover;
+}
+.new1 img{
+    height: 100%;
+    width: 100%;
+}
+.new2 p{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 800;
+    font-family: "宋体";
+    margin-top: -25%;
+}
+.box1 {
+    width: 1500px;
+    height:600px;
+    margin: auto;
+	position: relative;
+	margin-top:0px ;
+	margin: 0px auto;
+	background-size: cover;
+}
+.box1 img{
+    height: 100%;
+    width: 100%;
+}
+.box2{
+    display: block;
+    width: 60%;
+    height: 80%;
+    background-color: #e0bb8b88;
+    margin: auto;
+    position: absolute;
+    float: left;
+    margin-top: -35%;
+    margin-left: 20%;
+    border-color: #f1ca97;
+    border-width:15px;
+    border-style: solid;
+    border-radius: 20px;
+}
+.box2 p{
+    font-style: normal;
+    font-size: 30px;
+    font-family: "黑体";
+    font-weight: 800;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.box3{
+    display: block;
+    height: 80px;
+    width: 50%;
+    margin: auto;
+    margin-left: 30px;
+    margin-top: 2px;
+    margin-bottom: 30px;
+    /* background: #000; */
+}
+.box3  em {
+    color: red;
+    font-size: large;
+}
+.box3 span{
+    font-size: 25px;
+    font-family: "黑体";
+    font-weight: 600;
+    color: #292929d4;
+   
+}
+.box3 input{
+    margin: auto;
+    height: 50px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 3px solid #ebc13574;
+    background-color:#e0bb8b00; 
+}
+.box4{
+    display: block;
+    margin: auto;
+    height: 60%;
+    width: 50%;
+    margin-top: -40%;
+    margin-left: 45%;
+    /* background-color: #111111; */
+    position: absolute;
+    float: left;
+}
+.box4  em {
+    color: red;
+    font-size: large;
+}
+.box4 span{
+    font-size: 25px;
+    font-family: "黑体";
+    font-weight: 600;
+    color: #292929d4;
+    position:absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.box4 textarea{
+    margin: auto;
+    height: 90%;
+    width: 80%;
+    margin-top: -3%;
+    margin-left: 22%;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 3px solid #ebc13574;
+    background-color:#e0bb8b00; 
+}
+
+.submit input {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    background-color: #e66f0096;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: -30px;
+}

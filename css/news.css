@@ -1,0 +1,107 @@
+.news {
+    background-image: linear-gradient(#f0e4df, #fff)
+}
+
+.news_left {
+    float: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 15px;
+    width: 730px;
+    border: 1px solid #f2c9bb;
+    background-color: #fff;
+}
+
+.news_right {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    float: right;
+    padding: 15px;
+    width: 450px;
+    border: 1px solid #f2c9bb;
+    background-color: #fff;
+}
+
+.news_left .title,
+.news_right .title {
+    position: relative;
+    padding-left: 16px;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.news_left .title::before,
+.news_right .title::before {
+    position: absolute;
+    left: 0px;
+    top: 6px;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #e60012;
+}
+
+.news_left ul {
+    padding-bottom: 15px;
+    width: 698px;
+}
+
+.news_left ul li {
+    position: relative;
+    padding: 13px 30px 13px 15px;
+    width: 698px;
+    height: 45px;
+}
+
+.news_right ul {
+    padding-bottom: 15px;
+    width: 418px;
+}
+
+.news_right ul li {
+    position: relative;
+    padding: 13px 30px 13px 15px;
+    width: 418px;
+    height: 45px;
+}
+
+.news_left li:before,
+.news_right li::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #e60012;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border-radius: 50%;
+}
+
+.news_left li a {
+    float: left;
+    width: 570px;
+    transition: 0.3s;
+}
+
+.news_left li span {
+    float: right;
+}
+
+.news_right li a {
+    float: left;
+    width: 100%;
+    /* 溢出部分隐藏 */
+    overflow: hidden;
+    /* 有些标签会自动换行，这个是禁止自动换行 */
+    white-space: nowrap;
+    /* 使溢出部分以省略号显示，这个省略号是会占用你设置的固定宽度的 */
+    text-overflow: ellipsis;
+    transition: 0.3s;
+}
+
+.news_left li a:hover,
+.news_right li a:hover {
+    color: #f55044;
+}

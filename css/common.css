@@ -1,0 +1,170 @@
+/* 各个页面相同的样式表：头部、尾部 */
+/* 版心 */
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/*头部*/
+.header {
+    height: 70px;
+    background-color: #f55044;
+}
+
+.header .wrapper {
+    height: 70px;
+}
+
+.header .logo {
+    float: left;
+    height: 70px;
+}
+
+.header .logo img {
+    float: left;
+    margin-top: 15px;
+    height: 40px;
+}
+
+.header .logo h1 {
+    float: left;
+    margin-top: 20px;
+    padding-left: 5px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    border-left: 1.5px solid #fff;
+}
+
+.header .nav {
+    float: right;
+}
+
+.header .nav li {
+    float: left;
+    padding-top: 15px;
+}
+
+.header .nav li a {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 5px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.header .nav li a:hover {
+    background-color: #ff8c00;
+    border-radius: 17px;
+    transition: .3s;
+}
+
+/* 个人中心二级栏目 */
+.header .nav .indi {
+    position: relative;
+    height: 70px;
+}
+
+.header .column {
+    position: absolute;
+    top: 62px;
+    left: -5px;
+    padding: 7px 0 0 0;
+    width: 115px;
+    background-color: #f55044;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgb(254, 220, 227);
+    display: none;
+    z-index: 999;
+}
+
+.header .nav .column dl dd {
+    width: 110px;
+    height: 45px;
+    color: #606266;
+}
+
+.header .nav .indi:hover .column {
+    display: block;
+}
+
+.header .nav .column dl a:hover {
+    margin-left: 0px;
+    width: 115px;
+    height: 45px;
+    text-align: center;
+    background-color: #e60012;
+    border-radius: 10px;
+}
+
+/* 选定相应导航栏目颜色 */
+.header .nav li .seed {
+    background-color: #ff8c00;
+    border-radius: 17px;
+}
+
+/* 尾部 */
+.footer {
+    height: 140px;
+    background-color: #f55044;
+}
+
+.footer .wrapper {
+    position: relative;
+}
+
+.footer .middle {
+    height: 140px;
+    padding-top: 40px;
+}
+
+.footer .middle p {
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer .right {
+    position: absolute;
+    right: 0;
+    top: 42px;
+    width: 286px;
+    height: 46px;
+    /* background-color: #fff; */
+}
+
+.footer .right li {
+    float: left;
+    margin-right: 34px;
+    width: 46px;
+    height: 46px;
+}
+
+.footer .right li:last-child {
+    margin-right: 0px;
+}
+
+.footer .app {
+    background-image: url(../images/contact.png);
+    background-position: 0px 0px;
+}
+
+.footer .wechat {
+    background-image: url(../images/contact.png);
+    background-position: -46px 0px;
+}
+
+.footer .sina {
+    background-image: url(../images/contact.png);
+    background-position: -92px 0px;
+}
+
+.footer .pay {
+    background-image: url(../images/contact.png);
+    background-position: -138px 0px;
+}

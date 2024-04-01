@@ -1,0 +1,79 @@
+/* 焦点图 */
+.pic {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(#fec4d0, #fff);
+}
+
+.pic img {
+    width: 100%;
+    height: 400px;
+}
+
+/* 侧边栏 */
+/* 点击相应导航栏样式 */
+.header .nav li .seed {
+    background-color: #ff8c00;
+    border-radius: 17px;
+}
+
+.banner {
+    height: 200px;
+    /* background-color: pink; */
+}
+
+.box .aside {
+    float: left;
+    width: 260px;
+    height: 800px;
+    /* background-color: pink; */
+}
+
+.box .content {
+    height: 800px;
+    /* background-color: skyblue; */
+}
+
+.box .aside .title .iconfont {
+    font-size: 20px;
+    color: #f55044;
+}
+
+.box .aside .title {
+    width: 260px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+.box .aside .minu li a {
+    display: block;
+    padding-left: 10px;
+    width: 260px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ebeef4;
+}
+
+.box .aside .minu li a:hover {
+    background-color: #f55044;
+    font-size: 16px;
+    border-bottom: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.box .aside .minu .seed {
+    background-color: #f55044;
+    font-size: 16px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+.box .aside .minu .iconfont {
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #d8dcdf;
+}

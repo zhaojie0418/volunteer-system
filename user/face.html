@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background: url(../images/bg1.jpg) no-repeat;
+			background-size: 100%;
+			/* width: 100%; */
+		}
+
+		a {
+			position: relative;
+			left: 30px;
+			text-align: center;
+			font-size: 35px;
+			color: #e44004;
+		}
+	</style>
+</head>
+
+<body>
+
+	<video id="video" width="500" height="500"></video>
+	<canvas id="canvas" width="500" height="500"></canvas>
+
+	<a href="javascript:saveFile(filename)" onclick="dd()">进行人脸识别</a>
+
+	<div id="box">
+
+	</div>
+
+</body>
+<script>
+
+	//用来匹配不同的浏览器
+	function getUserMedia(constraints, success, error) {
+		if (navigator.mediaDevices.getUserMedia) {
+			navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+		} else if (navigator.webkitGetUserMedia) {
+			navigator.webkitGetUserMedia(constraints, success, error);
+		} else if (navigator.mozGetUserMedia) {
+			navigator.mozGetUserMedia(constraints, success, error);
+		} else if (navigator.getUserMedia) {
+			navigator.getUserMedia(constraints, success, error)
+		}
+	}
+
+	let video = document.getElementById('video');
+	let canvas = document.getElementById('canvas');
+	let context = canvas.getContext('2d');
+	//成功回调
+	function success(stream) {
+		video.srcObject = stream;
+		video.play();
+	}
+	//失败回调
+	function error(error) {
+		console.log("访问用户媒体失败");
+	}
+	//开启摄像头
+	if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
+		getUserMedia({ video: { width: 500, height: 500 } }, success, error)
+	} else {
+		alert("不支持");
+	}
+	//实现拍照的功能
+	function dd() {
+
+		context.drawImage(video, 0, 0, 500, 500);
+
+	}
+
+
+	//下面的代码是保存canvas标签里的图片并且将其按一定的规则重命名
+	var type = 'jpg';
+	var _fixType = function (type) {
+		type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+		var r = type.match(/png|jpeg|bmp|gif/)[0];
+		return 'image/' + r;
+	};
+
+	var saveFile = function (filename) {
+		//获取canvas标签里的图片内容
+		var imgData = document.getElementById('canvas').toDataURL(type);
+		imgData = imgData.replace(_fixType(type), 'image/octet-stream');
+
+		// 创建一个 FormData 对象
+		var formData = new FormData();
+
+		// 原先数据（原先数据含有data:image/jpg;base64,前缀）
+		// console.log("输出具体图片数据");
+		// console.log(imgData);
+
+		// 截取前缀并输出
+		const cleanedData = imgData.substring(imgData.indexOf(',') + 1);
+		console.log(cleanedData);
+
+		formData.append('photo', cleanedData);
+
+		// 方式1：将图像数据发送到 face.php 后端
+		fetch('face.php', {
+			method: 'POST',
+			body: formData
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log(data);
+				// 错误代码
+				const errorCode = data.error_code;
+				if (errorCode == 0) {
+					//获取具体的匹配分数，参考官方80作为阈值
+					const score = data.result.user_list[0].score;
+					if (score > 80) {
+						console.log('人脸识别成功');
+						window.location.href = 'index.php';
+					} else {
+						console.log('人脸识别失败  匹配程度不足');
+						window.location.href = 'login_html.php';
+					}
+				} else {
+					// 如果识别失败，输出错误信息
+					console.log('人脸识别失败  API调用错误');
+				}
+			})
+			.catch(error => {
+				console.error('上传图像失败：', error);
+			});
+
+		// 方式2 ：使用 AJAX 请求获取人脸识别(这种方式只支持get方法)
+		// var xhr = new XMLHttpRequest();
+		// xhr.onreadystatechange = function() {
+		//     if (xhr.readyState === XMLHttpRequest.DONE) {
+		//         if (xhr.status === 200) {
+		//             // 将 Api 传递的数据转化成 JSON
+		//             var responseObj = JSON.parse(xhr.responseText)
+		//             console.error('Success!' + responseObj);
+
+		//         } else {
+		//             console.error('Error occurred: ' + xhr.status);
+		//         }
+		//     }
+		// };
+		// 拼接 URL 的方式会使得链接过长
+		// xhr.open('GET', 'face.php?photo=' + encodeURIComponent(imgData), true);
+		// xhr.send();
+
+	};
+
+	// 下载后的文件名规则
+	var filename = 11111 + '.' + type;
+</script>
+
+</html>
