@@ -65,20 +65,21 @@ INSERT INTO `act_info` (`act_id`, `act_name`, `place`, `type`, `description`, `b
 CREATE TABLE `act_sign` (
   `u_id` int(10) NOT NULL,
   `act_id` int(10) NOT NULL,
-  `clock` enum('签到','已签到') CHARACTER SET utf8 NOT NULL DEFAULT '签到'
+  `clock` enum('签到','已签到') CHARACTER SET utf8 NOT NULL DEFAULT '签到',
+  `score` int(10) NOT NULL DEFAULT '3'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- 转存表中的数据 `act_sign`
 --
 
-INSERT INTO `act_sign` (`u_id`, `act_id`, `clock`) VALUES
-(1, 1, '已签到'),
-(1, 2, '已签到'),
-(1, 3, '签到'),
-(1, 4, '签到'),
-(3, 1, '已签到'),
-(3, 4, '已签到');
+INSERT INTO `act_sign` (`u_id`, `act_id`, `clock`,`score`) VALUES
+(1, 1, '已签到',1),
+(1, 2, '已签到',2),
+(1, 3, '签到',3),
+(1, 4, '签到',4),
+(3, 1, '已签到',5),
+(3, 4, '已签到',3);
 
 -- --------------------------------------------------------
 

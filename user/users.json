@@ -1,0 +1,9 @@
+{
+    "小张": {"activity1": 2.5, "activity2": 3.5, "activity3": 3.0, "activity4": 3.5, "activity5": 2.5, "activity6": 3.0},
+    "小赵": {"activity1": 3.0, "activity2": 3.5, "activity3": 1.5, "activity4": 5.0, "activity6": 3.0, "activity5": 3.5},
+    "小李": {"activity1": 2.5, "activity2": 3.0, "activity4": 3.5, "activity6": 4.0},
+    "小黄": {"activity2": 3.5, "activity3": 3.0, "activity6": 4.5, "activity4": 4.0, "activity5": 2.5},
+    "小徐": {"activity1": 3.0, "activity2": 4.0, "activity3": 2.0, "activity4": 3.0, "activity6": 3.0, "activity5": 2.0},
+    "小邱": {"activity1": 3.0, "activity2": 4.0, "activity6": 3.0, "activity4": 5.0, "activity5": 3.5},
+    "小樊": {"activity2": 4.5, "activity5": 1.0, "activity4": 4.0}
+}
